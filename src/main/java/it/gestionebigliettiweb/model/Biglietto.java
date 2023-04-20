@@ -13,6 +13,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 @Table(name = "biglietto")
 public class Biglietto {
@@ -62,6 +63,7 @@ public class Biglietto {
 
 	public Biglietto(String provenienza, String destinazione) {
 		this.provenienza=provenienza;
+		this.destinazione=destinazione;
 	}
 
 	public Long getId() {

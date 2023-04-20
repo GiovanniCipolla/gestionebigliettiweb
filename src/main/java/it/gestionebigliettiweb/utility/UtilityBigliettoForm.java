@@ -26,7 +26,7 @@ public class UtilityBigliettoForm {
 	
 	
 	
-	public static boolean validateArticoloBean(Biglietto bigliettoToBeValidated) {
+	public static boolean validateBigliettoBean(Biglietto bigliettoToBeValidated) {
 		// prima controlliamo che non siano vuoti i parametri
 		if (StringUtils.isBlank(bigliettoToBeValidated.getProvenienza())
 				|| StringUtils.isBlank(bigliettoToBeValidated.getDestinazione())

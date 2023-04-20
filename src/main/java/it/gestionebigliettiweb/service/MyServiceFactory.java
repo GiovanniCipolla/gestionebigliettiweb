@@ -4,6 +4,7 @@ import it.gestionebigliettiweb.dao.BigliettoDAO;
 import it.gestionebigliettiweb.dao.BigliettoDAOImpl;
 
 public class MyServiceFactory {
+	
 	// implementiamo il singleton in modo da evitare
 	// proliferazione di riferimenti
 	private static BigliettoService BIGLIETTO_SERVICE_INSTANCE = null;

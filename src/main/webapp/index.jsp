@@ -52,7 +52,7 @@
 				      <div class="container-fluid py-5">
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietti</h1>
 				        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. </p>
-				        <a class="btn btn-primary btn-lg" href="ListArticoliServlet">Lista Biglietti</a>
+				        <a class="btn btn-primary btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>
 				      </div>
 			    </div>
 			    
@@ -78,8 +78,8 @@
 			        </div>
 			        <h2>Inserisci Nuovo</h2>
 			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-			        <a href="PrepareInsertArticoloServlet" class="icon-link">
-			          Vai alla funzionalità
+			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
+			          Inserisci nuovo biglietto
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>

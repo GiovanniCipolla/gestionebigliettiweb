@@ -10,7 +10,7 @@ public interface BigliettoService {
 	// questo mi serve per injection
 		public void setBigliettoDao(BigliettoDAO articoloDao);
 
-		public List<Biglietto> listAll() throws Exception;
+		public List<Biglietto> lista() throws Exception;
 
 		public Biglietto caricaSingoloElemento(Long idInput) throws Exception;
 

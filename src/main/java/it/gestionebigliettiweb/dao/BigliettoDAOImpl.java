@@ -13,7 +13,7 @@ public class BigliettoDAOImpl implements BigliettoDAO {
 	
 	@Override
 	public List<Biglietto> list() throws Exception {
-		return entityManager.createQuery("from Articolo", Biglietto.class).getResultList();
+		return entityManager.createQuery("from Biglietto", Biglietto.class).getResultList();
 	}
 
 	@Override
