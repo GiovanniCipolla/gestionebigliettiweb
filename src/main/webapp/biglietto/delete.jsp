@@ -26,28 +26,28 @@
 					    <div class='card-header'>
 					        <h5>Visualizza dettaglio</h5>
 					    </div>
-					     <% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("articoloDaRimuovere"); %>
+					     <c:set var="bigliettoInPagina" value="${requestScope.bigliettoDaRimuovere}" />
 					    
 					
 					    <div class='card-body'>
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Provenienza</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getProvenienza()%></dd>
+							  <dd class="col-sm-9"><c:out value="${bigliettoInPagina.provenienza}" /></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Destinazione:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getDestinazione() %></dd>
+							  <dd class="col-sm-9"><c:out value="${bigliettoInPagina.destinazione}" /></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() %></dd>
+							  <dd class="col-sm-9"><c:out value="${bigliettoInPagina.prezzo}" /></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Data:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getData()!=null? bigliettoInPagina.getData().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")):"N.D."  %></dd>
+							  <dd class="col-sm-9"><c:out value="${bigliettoInPagina.data.format(DateTimeFormatter.ofPattern('dd/MM/yyyy'))}" /></dd>
 					    	</dl>
 					    	
 					    </div>
@@ -57,7 +57,7 @@
 					            <i class='fa fa-chevron-left'></i> Back
 					        </a>
 					         <form  action="ExecuteDeleteBigliettoServlet" method="post">
-							<input type="hidden" name="idDaRimuovere" value="<%= bigliettoInPagina.getId() %>">
+							<input type="hidden" name="idDaRimuovere" value="<c:out value="${bigliettoInPagina.id}" />">
 							<input type="submit" value="Elimina">
 						     </form>
 					    </div>
@@ -73,3 +73,4 @@
 			<!-- Footer -->
 			<jsp:include page="../footer.jsp" />
 	  </body>
+</html>

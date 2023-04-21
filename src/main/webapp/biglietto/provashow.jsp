@@ -1,6 +1,14 @@
-	<!-- Import comuni alle pagine -->
- 	<jsp:include page="../header.jsp" />
-   
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="it.gestionebigliettiweb.model.Biglietto"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<!DOCTYPE html>
+<html>
+<head>
+	 
+	 	<!-- Common imports in pages -->
+	 	<jsp:include page="../header.jsp" />
    <title>Visualizza Elemento</title>
  </head>
    <body class="d-flex flex-column h-100">
@@ -37,13 +45,13 @@
 				    	
 				    	<dl class="row">
 						  <dt class="col-sm-3 text-right">Data:</dt>
-						  <dd class="col-sm-9"><fmt:formatDate value="${bigliettoInPagina.data}" pattern="dd/MM/yyyy" /></dd>
+						  <dd class="col-sm-9"><c:out value="${bigliettoInPagina.data.format(DateTimeFormatter.ofPattern('dd/MM/yyyy'))}" /></dd>
 				    	</dl>
 				    	
 				    </div>
 				    
 				    <div class='card-footer'>
-				        <a href="ListBigliettiServlet" class='btn btn-outline-secondary' style='width:80px'>
+				        <a href="ListBigliettiServlet" class='btn btn-outline-secondary' style='width:100px'>
 				            <i class='fa fa-chevron-left'></i>Indietro
 				        </a>
 				    </div>
@@ -59,3 +67,4 @@
 		<!-- Footer -->
 		<jsp:include page="../footer.jsp" />
   </body>
+  </html>

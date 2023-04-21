@@ -46,30 +46,30 @@
 		
 							<form method="post" action="ExecuteInsertBigliettoServlet" class="row g-3" novalidate="novalidate">
 							
-								<% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("insert_biglietto_attr"); %>
+								 <c:set var="bigliettoInPagina" value="${requestScope.insert_biglietto_attr}" />
 							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">provenienza <span class="text-danger">*</span></label>
-									<input type="text" name="provenienza" id="provenienza" class="form-control" placeholder="Inserire il provenienza"  
-										value="<%=bigliettoInPagina.getProvenienza()!=null?bigliettoInPagina.getProvenienza():"" %>" required>
+									<input type="text" name="provenienza" id="provenienza" class="form-control" placeholder="Inserire la provenienza"  
+										value="<c:out value="${not empty bigliettoInPagina.provenienza ? bigliettoInPagina.provenienza : ''}" />" required>
 								</div>
 								
 								<div class="col-md-6">
 									<label for="destinazione" class="form-label">destinazione <span class="text-danger">*</span></label>
 									<input type="text" name="destinazione" id="destinazione" class="form-control" placeholder="Inserire la destinazione"  
-										value="<%=bigliettoInPagina.getDestinazione()!=null?bigliettoInPagina.getDestinazione():"" %>" required>
+										value="<c:out value="${not empty bigliettoInPagina.destinazione ? bigliettoInPagina.destinazione : ''}" />" required>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="prezzo" class="form-label">Prezzo <span class="text-danger">*</span></label>
-									<input type="number" class="form-control" name="prezzo" id="prezzo" placeholder="Inserire prezzo" 
-									value="<%=bigliettoInPagina.getPrezzo()!=null?bigliettoInPagina.getPrezzo():"" %>" required>
+									<input type="number" name="prezzo" id="prezzo" class="form-control" placeholder="Inserire prezzo" 
+									value="<c:out value="${not empty bigliettoInPagina.prezzo ? bigliettoInPagina.prezzo : ''}" />" required>
 								</div>
 								
 								<div class="col-md-3">
 									<label for="data" class="form-label">Data<span class="text-danger">*</span></label>
 									<input class="form-control"  name="data" id="data" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="<%=bigliettoInPagina.getData()!=null? bigliettoInPagina.getData().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")):""  %>" required/>
+										 value="<c:out value="${not empty bigliettoInPagina.data ? bigliettoInPagina.data.format(DateTimeFormatter.ofPattern('dd/MM/yyyy')) : ''}" />" required/>
 								</div>
 								
 								

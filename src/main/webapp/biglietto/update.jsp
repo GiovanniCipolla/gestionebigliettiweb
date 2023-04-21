@@ -45,6 +45,7 @@
 							<form method="post" action="ExecuteUpdateBigliettoServlet" class="row g-3" novalidate="novalidate">
 							
 								<% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaAggiornare"); %>
+								
 							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">Provenienza <span class="text-danger">*</span></label>

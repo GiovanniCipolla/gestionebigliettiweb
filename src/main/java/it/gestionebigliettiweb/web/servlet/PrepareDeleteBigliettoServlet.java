@@ -35,7 +35,7 @@ public class PrepareDeleteBigliettoServlet extends HttpServlet {
 		
 		//BUSINESS
 		try {
-			request.setAttribute("articoloDaRimuovere",
+			request.setAttribute("bigliettoDaRimuovere",
 					MyServiceFactory.getBigliettoServiceInstance().caricaSingoloElemento(idDaRimuovere));
 		} catch (Exception e) {
 			e.printStackTrace();
