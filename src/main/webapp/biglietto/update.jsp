@@ -67,7 +67,7 @@
 								<div class="col-md-3">
 									<label for="data" class="form-label">Data<span class="text-danger">*</span></label>
 									<input class="form-control"  name="data" id="data" type="date"  title="formato : gg/mm/aaaa" 
-										value="<c:out value="${not empty bigliettoInPagina.data ? bigliettoInPagina.data.format(DateTimeFormatter.ofPattern('dd/MM/yyyy')) : ''}" />" required/>
+										value="<c:out value="${not empty bigliettoInPagina.data ? bigliettoInPagina.data.format(DateTimeFormatter.ofPattern('yyyy-MM-dd')) : ''}" />" required/>
 								</div>
 								
 							<div class="col-12">
