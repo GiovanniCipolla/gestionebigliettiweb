@@ -25,21 +25,20 @@ public class ExecuteUpdateBigliettoServlet extends HttpServlet {
 
 		// BINDING
 		String idDaPagina = request.getParameter("id");
+		String provenienzaDaPagina = request.getParameter("provenienza");
+		String destinazioneDaPagina = request.getParameter("destinazione");
+		String prezzoDaPaginaString = request.getParameter("prezzo");
+		String dataDaPagina = request.getParameter("data");
+		Biglietto bigliettoInstance = UtilityBigliettoForm.createBigliettoFromParams(provenienzaDaPagina,
+				destinazioneDaPagina, prezzoDaPaginaString, dataDaPagina);
+		bigliettoInstance.setId(Long.parseLong(idDaPagina));
+
+		// VALIDAZIONE
 		if (!NumberUtils.isCreatable(idDaPagina)) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 			return;
 		}
-		String provenienzaDaPagina = request.getParameter("provenienza");
-		String destinazioneDaPagina = request.getParameter("destinazione");
-		String prezzoDaPaginaString = request.getParameter("prezzo");
-		String dataDaPagina = request.getParameter("data");
-
-		Biglietto bigliettoInstance = UtilityBigliettoForm.createBigliettoFromParams(provenienzaDaPagina,
-				destinazioneDaPagina, prezzoDaPaginaString, dataDaPagina);
-
-		bigliettoInstance.setId(Long.parseLong(idDaPagina));
-		// VALIDAZIONE
 		if (!UtilityBigliettoForm.validateBigliettoBean(bigliettoInstance) || !NumberUtils.isCreatable(idDaPagina)) {
 			request.setAttribute("bigliettoDaAggiornare", bigliettoInstance);
 			request.setAttribute("errorMessage", "Attenzione sono presenti errori di validazione");
